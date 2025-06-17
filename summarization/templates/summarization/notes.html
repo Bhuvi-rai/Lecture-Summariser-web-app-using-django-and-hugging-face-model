@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Summarizer - Summary</title>
+    <link rel="stylesheet" href="{% static 'css/notes.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Vio - omika Scribdha</h1>
+
+        <div class="output-section">
+            <h2>Summarized Notes:</h2>
+            <div id="summaryOutput" class="summary-box">{{ summary_text|safe }}</div>
+        </div>
+
+        <!-- Download button for the summary -->
+        <button class="download-button" onclick="downloadSummary()">⇩ </button>
+
+        <!-- View Past Summaries Button -->
+        <button class="history-button" onclick="loadSummaries()">📜 View Past Summaries</button>
+
+        <!-- Past Summaries Section -->
+        <div id="pastSummaries" class="summary-container"></div>
+    </div>
+
+    <script>
+        function downloadSummary() {
+            const summaryText = document.getElementById("summaryOutput").innerText;
+            const blob = new Blob([summaryText], { type: "text/plain" });
+            const downloadLink = document.createElement("a");
+
+            downloadLink.download = "Summarized_Notes.txt";
+            downloadLink.href = URL.createObjectURL(blob);
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        }
+
+        function loadSummaries() {
+            fetch('/get_summaries/')
+                .then(response => response.json())
+                .then(data => {
+                    let container = document.getElementById("pastSummaries");
+                    container.innerHTML = ""; // Clear previous content
+
+                    if (data.summaries.length === 0) {
+                        container.innerHTML = "<p>No past summaries found.</p>";
+                        return;
+                    }
+
+                    data.summaries.forEach(summary => {
+                        let div = document.createElement("div");
+                        div.classList.add("summary-box");
+                        div.innerHTML = `<p>${summary.text}</p><small>Saved on: ${summary.date}</small>`;
+                        container.appendChild(div);
+                    });
+                })
+                .catch(error => console.error("Error fetching summaries:", error));
+        }
+    </script>
+</body>
+</html>

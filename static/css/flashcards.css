@@ -1,0 +1,57 @@
+body {
+    background-color: #f7f9f9;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #7b8d93;
+    font-size: 36px;
+}
+
+.flashcard-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.flashcard {
+    width: 150px;
+    height: 200px;
+    background-color: #ffcccb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.flashcard:hover {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #5f6368;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 8px;
+}
+
+.back {
+    background-color: #b2dfdb;
+}

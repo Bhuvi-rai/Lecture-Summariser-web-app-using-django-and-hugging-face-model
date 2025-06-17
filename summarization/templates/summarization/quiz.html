@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz</h1>
+        <form id="quizForm">
+            <div class="question">
+                <p>Question 1: What is 2 + 2?</p>
+                <input type="radio" name="q1" value="3"> 3
+                <input type="radio" name="q1" value="4"> 4
+                <input type="radio" name="q1" value="5"> 5
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="{% static 'js/quiz.js' %}"></script>
+</body>
+</html>

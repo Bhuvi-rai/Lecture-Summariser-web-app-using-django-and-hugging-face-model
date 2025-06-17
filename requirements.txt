@@ -1,0 +1,21 @@
+# Django & core web dependencies
+Django>=4.0,<5.0
+gunicorn>=20.1.0
+
+# File parsing
+pdfminer.six>=20201018
+python-docx>=0.8.11
+
+# Visualization
+matplotlib>=3.5.0
+Pillow>=9.0.0  # required by matplotlib
+
+# Web requests (for Hugging Face API)
+requests>=2.26.0
+
+# NLP & Transformers (optional if running model locally)
+transformers>=4.11.0
+torch>=1.10.0
+
+# Utilities
+regex>=2021.11.10

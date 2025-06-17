@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="{% static 'css/flashcards.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Flashcards</h1>
+        <div class="flashcard-container">
+            <div class="flashcard">
+                <div class="front">Question</div>
+                <div class="back">Answer</div>
+            </div>
+            <!-- Add more flashcards as needed -->
+        </div>
+    </div>
+    <script src="{% static 'js/flashcards.js' %}"></script>
+</body>
+</html>
+

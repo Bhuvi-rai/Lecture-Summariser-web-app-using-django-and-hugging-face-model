@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Summarizer</title>
+    <link rel="stylesheet" href="{% static 'css/work.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Vio - Omika Scribdha</h1>
+        <div class="form-panel">
+            <form method="POST" enctype="multipart/form-data" id="summaryForm">
+                {% csrf_token %}
+                <label for="lecture_file">Choose a file (PDF, DOCX, TXT):</label>
+                <input type="file" name="lecture_file" id="lecture_file" accept=".pdf, .docx, .txt" required><br><br>
+
+                <label for="summaryLength">Choose Summary Length:</label>
+                <select name="summaryLength" id="summaryLength">
+                    <option value="short">Short</option>
+                    <option value="medium">Medium</option>
+                    <option value="long">Long</option>
+                </select><br><br>
+
+                <button type="submit">Summarize</button>
+            </form>
+        </div>
+
+        <!-- Options for Flashcards, Quiz, and Important Questions -->
+        <div class="panel-container">
+            <div class="panel flashcard">
+                <img src="{% static 'images1.jpg' %}" alt="Flashcards" class="panel-img">
+                <p class="panel-caption">Flashcards</p>
+            </div>
+
+            <div class="panel quiz">
+                <img src="{% static 'images2.png' %}" alt="Quiz" class="panel-img">
+                <p class="panel-caption">Quiz</p>
+            </div>
+
+            <div class="panel important">
+                <img src="{% static 'imp_questions.jpg' %}" alt="Important Questions" class="panel-img">
+                <p class="panel-caption">Important Questions</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

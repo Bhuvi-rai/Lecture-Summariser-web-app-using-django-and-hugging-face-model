@@ -1,0 +1,117 @@
+/* General reset and styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('beige.jpg'); /* Replace with your image name in the static folder */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Background stays fixed when scrolling */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Main container styling */
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 12px;
+    width: 70%;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for a lifted look */
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333; /* Dark color for contrast */
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Slight text shadow for emphasis */
+}
+
+.output-section {
+    text-align: left;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold; /* Make subheadings bold */
+}
+
+/* Summarized text box */
+.summary-box {
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent for readability */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    color: #333;
+    font-size: 18px;
+    min-height: 200px;
+    max-height: 400px;
+    overflow-y: auto; /* Allows scrolling if content is long */
+    white-space: pre-wrap; /* Preserves formatting and line breaks */
+}
+
+/* Styles for lists and tables */
+.summary-box h3 {
+    font-size: 24px; /* Sub-subheading */
+    margin-top: 15px;
+    font-weight: bold; /* Bold sub-subheading */
+}
+
+.summary-box ul {
+    margin: 10px 0;
+    padding-left: 20px; /* Indent bullet points */
+}
+
+.summary-box li {
+    margin: 5px 0; /* Space between list items */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensure table borders are collapsed */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Light border for table cells */
+    padding: 8px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+}
+
+th {
+    background-color: #f2f2f2; /* Light grey background for header */
+}
+.download-button {
+    position: fixed;
+    bottom: 20px; /* Lower on the page */
+    right: 20px; /* Adjust as needed */
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 100px; /* Increased width */
+    height: 100px; /* Increased height */
+    font-size: 60px; /* Larger font for the icon */
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download-button:hover {
+    background-color: rgba(200, 200, 200, 0.9);
+}
+

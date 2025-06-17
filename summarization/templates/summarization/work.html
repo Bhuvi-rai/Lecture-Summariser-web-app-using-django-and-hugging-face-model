@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Summarizer</title>
+    <link rel="stylesheet" href="{% static 'css/work.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Vio - omika Scribdha</h1>
+
+        <div class="input-output-container">
+            <!-- Input Section -->
+            <div class="input-section">
+                <!-- Added method="POST" and action to point to Django view -->
+                <form id="summaryForm" method="POST">
+                    {% csrf_token %}
+                    <label for="noteInput">Enter Notes:</label>
+                    <textarea id="noteInput" name="lecture_content" placeholder="Paste your notes here..." rows="10"></textarea>
+                    
+                    <div class="divider">OR</div>
+                    
+                    <label for="fileInput">Upload PDF or Document:</label>
+                    <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.txt">
+                    
+                    <label for="summaryLength">Choose Summary Length:</label>
+                    <select id="summaryLength" name="summary_length">
+                        <option value="short">Short</option>
+                        <option value="medium">Medium</option>
+                        <option value="long">Long</option>
+                    </select>
+                    <button type="submit">Summarize</button>
+                </form>
+                
+
+                <div id="result"></div>
+            </div>
+
+            <!-- Output Section (Summarized Notes) -->
+            <div class="output-section">
+                <h2>Summarized Notes:</h2>
+                <!-- Display the summary returned by the view -->
+                <div id="summaryOutput" class="summary-box">{{ summary|safe }}</div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/work.js' %}"></script>
+</body>
+</html>

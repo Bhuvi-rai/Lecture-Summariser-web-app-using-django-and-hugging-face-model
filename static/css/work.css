@@ -1,0 +1,137 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('beige.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 900px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* Header */
+h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 700;
+}
+
+/* Form Panel */
+.form-panel {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+#summaryForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+textarea, select, input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Panel Styles */
+.panel-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    gap: 30px;
+    padding: 20px;
+}
+
+.panel {
+    background-color: #f9f9f9;
+    padding: 30px;
+    width: 30%;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.panel:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.panel-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.panel-caption {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Panel Color Variations */
+.panel.flashcard {
+    background-color: #f3c4c4;
+}
+
+.panel.quiz {
+    background-color: #c4e3f3;
+}
+
+.panel.important {
+    background-color: #c4f3c7;
+}
+
+/* Hover effect for panel images */
+.panel-img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
